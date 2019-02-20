@@ -1,11 +1,11 @@
 {
   "name": "movie-analyst-ui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ui for the movie analyst website....im totally not ripping this off.......",
   "scripts": {
     "test": "mocha",
     "spec": "speculate",
-    "start": "sudo node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
