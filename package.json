@@ -4,6 +4,8 @@
   "description": "ui for the movie analyst website....im totally not ripping this off.......",
   "scripts": {
     "test": "mocha"
+    "spec": "speculate",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,7 @@
   "homepage": "https://github.com/juanswan13/movie-analyst-ui#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-	"dotenv": "^6.2.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "package.json": "^2.0.1",
     "superagent": "^3.8.3"
