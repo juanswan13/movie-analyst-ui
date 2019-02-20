@@ -3,7 +3,7 @@ var express = require('express');
 var request = require('superagent');
 var dotenv = require('dotenv');
 dotenv.config();
-var backendHost = process.env.BACK_HOST;
+var backendHost = process.env.BACK_HOST || 3000;
 // Create our express app
 var app = express();
 
