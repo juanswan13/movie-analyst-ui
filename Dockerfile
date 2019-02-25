@@ -1,9 +1,8 @@
 FROM alpine:3.1
 
 # Update
-RUN apk add --update nodejs
-RUN npm cache clean -f
-RUN npm install -g n
+RUN apk add --update
+RUN apk add nodejs
 
 # Install app dependencies
 COPY package.json /src/package.json
@@ -14,4 +13,4 @@ RUN cd /src; npm install
 COPY . /src
 
 EXPOSE  80
-CMD ["node", "/src/server.js"]
+CMD ["sudo node", "/src/server.js"]
