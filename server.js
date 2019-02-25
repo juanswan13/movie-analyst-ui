@@ -71,5 +71,5 @@ app.get('/pending', function(req, res){
     })
 })
 
-app.listen(8080);
+app.listen(80);
                                             
