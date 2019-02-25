@@ -23,7 +23,7 @@ app.get('/', function(req, res){
 // Once the request is sent out, our API will validate that the access_token has the right scope to request the /movies resource and if it does, will return the movie data. We’ll take this movie data, and pass it alongside our movies.ejs template for rendering
 app.get('/movies', function(req, res){
   request
-    .get('http://'+backendHost+':3000/movies')
+    .get('http://'+backendHost+':80/movies')
     .end(function(err, data) {
         var movies = data.body;
         res.render('movies', { movies: movies} );
@@ -35,7 +35,7 @@ app.get('/movies', function(req, res){
 // The key difference on the authors route, is that for our client, we’re naming the route /authors, but our API endpoint is /reviewers. Our route on the client does not have to match the API endpoint route.
 app.get('/authors', function(req, res){
   request
-    .get('http://'+backendHost+':3000/reviewers')
+    .get('http://'+backendHost+':80/reviewers')
     .set('Authorization', 'Bearer ' + req.access_token)
     .end(function(err, data) {
 	  if(data.status == 403){
@@ -49,7 +49,7 @@ app.get('/authors', function(req, res){
 
 app.get('/publications', function(req, res){
   request
-    .get('http://'+backendHost+':3000/publications')
+    .get('http://'+backendHost+':80/publications')
     .end(function(err, data) {
       if(data.status == 403){
         res.send(403, '403 Forbidden');
@@ -63,7 +63,7 @@ app.get('/publications', function(req, res){
 // We’ve added the pending route, but calling this route from the MovieAnalyst Website will always result in a 403 Forbidden error as this client does not have the admin scope required to get the data.
 app.get('/pending', function(req, res){
   request
-    .get('http://'+backendHost+':3000/pending')
+    .get('http://'+backendHost+':80/pending')
     .end(function(err, data) {
       if(data.status == 403){
         res.send(403, '403 Forbidden');
