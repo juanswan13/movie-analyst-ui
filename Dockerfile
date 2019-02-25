@@ -13,4 +13,4 @@ RUN cd /src; npm install
 COPY . /src
 
 EXPOSE  80
-CMD ["sudo node", "/src/server.js"]
+CMD ["node", "/src/server.js"]
