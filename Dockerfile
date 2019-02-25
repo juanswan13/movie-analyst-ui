@@ -2,6 +2,7 @@ FROM centos:centos7
 
 # Update
 RUN yum -y update
+RUN yum install -y yum epel-release
 RUN yum install -y nodejs
 
 # Install app dependencies
