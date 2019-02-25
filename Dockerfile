@@ -1,9 +1,8 @@
-FROM alpine:3.1
+FROM centos:centos7
 
 # Update
-RUN apk add --update
-RUN apk add nodejs
-RUN npm install -g npm@latest
+RUN yum -y update
+RUN yum install -y nodejs
 
 # Install app dependencies
 COPY package.json /src/package.json
