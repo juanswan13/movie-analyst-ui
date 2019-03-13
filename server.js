@@ -2,9 +2,11 @@
 var express = require('express');
 var request = require('superagent');
 var backendHost = process.env.BACK_HOST || 'movie-analyst-api';
+
 // Create our express app
 var app = express();
-
+import { hotjar } from 'react-hotjar';
+hotjar.initialize(1236492, 6);
 // Set the view engine to use EJS as well as set the default views directory
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public/views/');
