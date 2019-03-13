@@ -23,6 +23,7 @@
     "express": "^4.16.4",
     "package.json": "^2.0.1",
     "speculate": "^1.7.4",
+    "react-hotjar": "latest",
     "superagent": "^3.8.3"
   }
 }
